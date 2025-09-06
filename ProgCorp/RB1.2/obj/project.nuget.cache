@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "UytH3UZKtFc=",
+  "success": true,
+  "projectFilePath": "/home/rovian/ProgCorp/RB1.2/RB1.2.csproj",
+  "expectedPackageFiles": [
+    "/home/rovian/.nuget/packages/microsoft.aspnetcore.app.ref/9.0.8/microsoft.aspnetcore.app.ref.9.0.8.nupkg.sha512"
+  ],
+  "logs": []
+}
