@@ -12,3 +12,17 @@
 /home/rovian/ProgCorp/RB1.2/obj/Debug/net9.0/RB1.2.pdb
 /home/rovian/ProgCorp/RB1.2/obj/Debug/net9.0/RB1.2.genruntimeconfig.cache
 /home/rovian/ProgCorp/RB1.2/obj/Debug/net9.0/ref/RB1.2.dll
+/home/rovian/mirea/ProgCorp/RB1.2/bin/Debug/net9.0/RB1.2
+/home/rovian/mirea/ProgCorp/RB1.2/bin/Debug/net9.0/RB1.2.deps.json
+/home/rovian/mirea/ProgCorp/RB1.2/bin/Debug/net9.0/RB1.2.runtimeconfig.json
+/home/rovian/mirea/ProgCorp/RB1.2/bin/Debug/net9.0/RB1.2.dll
+/home/rovian/mirea/ProgCorp/RB1.2/bin/Debug/net9.0/RB1.2.pdb
+/home/rovian/mirea/ProgCorp/RB1.2/obj/Debug/net9.0/RB1.2.GeneratedMSBuildEditorConfig.editorconfig
+/home/rovian/mirea/ProgCorp/RB1.2/obj/Debug/net9.0/RB1.2.AssemblyInfoInputs.cache
+/home/rovian/mirea/ProgCorp/RB1.2/obj/Debug/net9.0/RB1.2.AssemblyInfo.cs
+/home/rovian/mirea/ProgCorp/RB1.2/obj/Debug/net9.0/RB1.2.csproj.CoreCompileInputs.cache
+/home/rovian/mirea/ProgCorp/RB1.2/obj/Debug/net9.0/RB1.2.dll
+/home/rovian/mirea/ProgCorp/RB1.2/obj/Debug/net9.0/refint/RB1.2.dll
+/home/rovian/mirea/ProgCorp/RB1.2/obj/Debug/net9.0/RB1.2.pdb
+/home/rovian/mirea/ProgCorp/RB1.2/obj/Debug/net9.0/RB1.2.genruntimeconfig.cache
+/home/rovian/mirea/ProgCorp/RB1.2/obj/Debug/net9.0/ref/RB1.2.dll

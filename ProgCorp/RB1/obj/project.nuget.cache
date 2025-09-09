@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "g4n7QLned3M=",
+  "dgSpecHash": "hEw2EM6W2vs=",
   "success": true,
-  "projectFilePath": "/home/rovian/ProgCorp/RB1/RB1.csproj",
+  "projectFilePath": "/home/rovian/mirea/ProgCorp/RB1/RB1.csproj",
   "expectedPackageFiles": [
     "/home/rovian/.nuget/packages/microsoft.aspnetcore.app.ref/9.0.8/microsoft.aspnetcore.app.ref.9.0.8.nupkg.sha512"
   ],

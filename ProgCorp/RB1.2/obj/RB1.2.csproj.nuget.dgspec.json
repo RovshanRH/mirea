@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/rovian/ProgCorp/RB1.2/RB1.2.csproj": {}
+    "/home/rovian/mirea/ProgCorp/RB1.2/RB1.2.csproj": {}
   },
   "projects": {
-    "/home/rovian/ProgCorp/RB1.2/RB1.2.csproj": {
+    "/home/rovian/mirea/ProgCorp/RB1.2/RB1.2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/rovian/ProgCorp/RB1.2/RB1.2.csproj",
+        "projectUniqueName": "/home/rovian/mirea/ProgCorp/RB1.2/RB1.2.csproj",
         "projectName": "RB1.2",
-        "projectPath": "/home/rovian/ProgCorp/RB1.2/RB1.2.csproj",
+        "projectPath": "/home/rovian/mirea/ProgCorp/RB1.2/RB1.2.csproj",
         "packagesPath": "/home/rovian/.nuget/packages/",
-        "outputPath": "/home/rovian/ProgCorp/RB1.2/obj/",
+        "outputPath": "/home/rovian/mirea/ProgCorp/RB1.2/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/rovian/.nuget/NuGet/NuGet.Config"

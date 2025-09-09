@@ -13,13 +13,10 @@ class Program
         "-" => val_1 - val_2,
         "*" => val_1 * val_2,
         "/" => val_2 != 0 ? val_1 / val_2 : throw new DivideByZeroException(),
-        "%" => val_1 % val_2,
-        "1/x" => 1 / val_1,
+        "%" => val_1 * (val_2/100),
+        "1/x" => val_1 != 0 ? 1 / val_1 : throw new DivideByZeroException(),
         "x^2" => Math.Pow(val_1, 2),
         "sqrt" => Math.Sqrt(val_1),
-        // "M+" => memory = val_1,
-        // "M-" => memory = 0,
-        // "MR" => val_1 = memory,
         _ => throw new NotImplementedException()
 
 
@@ -63,11 +60,9 @@ class Program
             Console.WriteLine("Вторая переменная: ");
             double value_2 = Convert.ToDouble(Console.ReadLine());
 
-            string[] oper = operation != null ? operation.Split(" ") : [];
-            Console.WriteLine($"Произошла операция {oper[0]} и {oper[1]}");
+            string[] oper = operation != null  ? operation.Split(" ") : [];
+            Console.WriteLine($"Произошла операция {oper[0]}");
 
-
-            // if (oper[1] != "M+" & oper[1] != "M-" & oper[1] != "MR")
             if (oper.Length != 1 && program.M_Actions.Contains(oper[1]))
             {
                 double newValue_2 = value_2;
