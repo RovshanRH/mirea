@@ -1,0 +1,14 @@
+/home/rovian/mirea/ProgCorp/RB2/bin/Debug/net9.0/RB2
+/home/rovian/mirea/ProgCorp/RB2/bin/Debug/net9.0/RB2.deps.json
+/home/rovian/mirea/ProgCorp/RB2/bin/Debug/net9.0/RB2.runtimeconfig.json
+/home/rovian/mirea/ProgCorp/RB2/bin/Debug/net9.0/RB2.dll
+/home/rovian/mirea/ProgCorp/RB2/bin/Debug/net9.0/RB2.pdb
+/home/rovian/mirea/ProgCorp/RB2/obj/Debug/net9.0/RB2.GeneratedMSBuildEditorConfig.editorconfig
+/home/rovian/mirea/ProgCorp/RB2/obj/Debug/net9.0/RB2.AssemblyInfoInputs.cache
+/home/rovian/mirea/ProgCorp/RB2/obj/Debug/net9.0/RB2.AssemblyInfo.cs
+/home/rovian/mirea/ProgCorp/RB2/obj/Debug/net9.0/RB2.csproj.CoreCompileInputs.cache
+/home/rovian/mirea/ProgCorp/RB2/obj/Debug/net9.0/RB2.dll
+/home/rovian/mirea/ProgCorp/RB2/obj/Debug/net9.0/refint/RB2.dll
+/home/rovian/mirea/ProgCorp/RB2/obj/Debug/net9.0/RB2.pdb
+/home/rovian/mirea/ProgCorp/RB2/obj/Debug/net9.0/RB2.genruntimeconfig.cache
+/home/rovian/mirea/ProgCorp/RB2/obj/Debug/net9.0/ref/RB2.dll

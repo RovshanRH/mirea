@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "YsBiLXZSCas=",
+  "success": true,
+  "projectFilePath": "/home/rovian/mirea/ProgCorp/RB2/RB2.csproj",
+  "expectedPackageFiles": [
+    "/home/rovian/.nuget/packages/microsoft.aspnetcore.app.ref/9.0.8/microsoft.aspnetcore.app.ref.9.0.8.nupkg.sha512"
+  ],
+  "logs": []
+}
