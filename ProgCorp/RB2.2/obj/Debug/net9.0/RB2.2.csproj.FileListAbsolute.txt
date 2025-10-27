@@ -1,0 +1,15 @@
+C:\Users\rovsh\Mirea-repo\mirea\ProgCorp\RB2.2\bin\Debug\net9.0\RB2.2.exe
+C:\Users\rovsh\Mirea-repo\mirea\ProgCorp\RB2.2\bin\Debug\net9.0\RB2.2.deps.json
+C:\Users\rovsh\Mirea-repo\mirea\ProgCorp\RB2.2\bin\Debug\net9.0\RB2.2.runtimeconfig.json
+C:\Users\rovsh\Mirea-repo\mirea\ProgCorp\RB2.2\bin\Debug\net9.0\RB2.2.dll
+C:\Users\rovsh\Mirea-repo\mirea\ProgCorp\RB2.2\bin\Debug\net9.0\RB2.2.pdb
+C:\Users\rovsh\Mirea-repo\mirea\ProgCorp\RB2.2\obj\Debug\net9.0\RB2.2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rovsh\Mirea-repo\mirea\ProgCorp\RB2.2\obj\Debug\net9.0\RB2.2.AssemblyInfoInputs.cache
+C:\Users\rovsh\Mirea-repo\mirea\ProgCorp\RB2.2\obj\Debug\net9.0\RB2.2.AssemblyInfo.cs
+C:\Users\rovsh\Mirea-repo\mirea\ProgCorp\RB2.2\obj\Debug\net9.0\RB2.2.csproj.CoreCompileInputs.cache
+C:\Users\rovsh\Mirea-repo\mirea\ProgCorp\RB2.2\obj\Debug\net9.0\RB2.2.sourcelink.json
+C:\Users\rovsh\Mirea-repo\mirea\ProgCorp\RB2.2\obj\Debug\net9.0\RB2.2.dll
+C:\Users\rovsh\Mirea-repo\mirea\ProgCorp\RB2.2\obj\Debug\net9.0\refint\RB2.2.dll
+C:\Users\rovsh\Mirea-repo\mirea\ProgCorp\RB2.2\obj\Debug\net9.0\RB2.2.pdb
+C:\Users\rovsh\Mirea-repo\mirea\ProgCorp\RB2.2\obj\Debug\net9.0\RB2.2.genruntimeconfig.cache
+C:\Users\rovsh\Mirea-repo\mirea\ProgCorp\RB2.2\obj\Debug\net9.0\ref\RB2.2.dll

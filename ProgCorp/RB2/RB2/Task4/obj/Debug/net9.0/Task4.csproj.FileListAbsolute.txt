@@ -1,0 +1,15 @@
+C:\Users\rovsh\Mirea-repo\mirea\ProgCorp\RB2\RB2\Task4\bin\Debug\net9.0\Task4.exe
+C:\Users\rovsh\Mirea-repo\mirea\ProgCorp\RB2\RB2\Task4\bin\Debug\net9.0\Task4.deps.json
+C:\Users\rovsh\Mirea-repo\mirea\ProgCorp\RB2\RB2\Task4\bin\Debug\net9.0\Task4.runtimeconfig.json
+C:\Users\rovsh\Mirea-repo\mirea\ProgCorp\RB2\RB2\Task4\bin\Debug\net9.0\Task4.dll
+C:\Users\rovsh\Mirea-repo\mirea\ProgCorp\RB2\RB2\Task4\bin\Debug\net9.0\Task4.pdb
+C:\Users\rovsh\Mirea-repo\mirea\ProgCorp\RB2\RB2\Task4\obj\Debug\net9.0\Task4.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rovsh\Mirea-repo\mirea\ProgCorp\RB2\RB2\Task4\obj\Debug\net9.0\Task4.AssemblyInfoInputs.cache
+C:\Users\rovsh\Mirea-repo\mirea\ProgCorp\RB2\RB2\Task4\obj\Debug\net9.0\Task4.AssemblyInfo.cs
+C:\Users\rovsh\Mirea-repo\mirea\ProgCorp\RB2\RB2\Task4\obj\Debug\net9.0\Task4.csproj.CoreCompileInputs.cache
+C:\Users\rovsh\Mirea-repo\mirea\ProgCorp\RB2\RB2\Task4\obj\Debug\net9.0\Task4.sourcelink.json
+C:\Users\rovsh\Mirea-repo\mirea\ProgCorp\RB2\RB2\Task4\obj\Debug\net9.0\Task4.dll
+C:\Users\rovsh\Mirea-repo\mirea\ProgCorp\RB2\RB2\Task4\obj\Debug\net9.0\refint\Task4.dll
+C:\Users\rovsh\Mirea-repo\mirea\ProgCorp\RB2\RB2\Task4\obj\Debug\net9.0\Task4.pdb
+C:\Users\rovsh\Mirea-repo\mirea\ProgCorp\RB2\RB2\Task4\obj\Debug\net9.0\Task4.genruntimeconfig.cache
+C:\Users\rovsh\Mirea-repo\mirea\ProgCorp\RB2\RB2\Task4\obj\Debug\net9.0\ref\Task4.dll
