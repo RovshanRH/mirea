@@ -2,70 +2,51 @@
 
 using System;
 
-class Program
+class Program_1
 {
+    static double calculation(double x, double eps)
+    {
+        double term = 1.0;
+        double total = term;
+        int n = 1;
+
+        while (Math.Abs(term) > eps)
+        {
+            term = -term * (Math.Pow(x, 2 * n) / (2 * n * (2 * n - 1)));
+            total += term;
+            n++;
+        }
+
+        return total;
+
+    }
+
     static void Main()
     {
-        Console.WriteLine("Введите x (|x| <= 1): ");
-        double x = double.Parse(Console.ReadLine());
+        Console.Write("Введите x функции cos(x): ");
+        double x_func = double.Parse(Console.ReadLine()!);
 
-        Console.WriteLine("Введите точность e (< 0.01): ");
-        double e = double.Parse(Console.ReadLine());
+        Console.Write("Введите e < 0,01: ");
+        double epsilon = double.Parse(Console.ReadLine()!);
 
-        double sum = 0.0;
-        double term = x;
-        int n = 0;
-
-        while (Math.Abs(term) >= e)
+        if (epsilon >= 0.01 || epsilon <= 0)
         {
-            sum += term;
-            n++;
-
-            double numerator = 1.0;
-            for (int i = 1; i <= n; i++)
-            {
-                numerator *= (2 * i - 1);
-            }
-
-            double denominator = 1.0;
-            for (int i = 1; i <= n; i++)
-            {
-                denominator *= (2 * i);
-            }
-
-            term = (numerator / denominator) * Math.Pow(x, 2 * n + 1) / (2 * n + 1);
+            Console.WriteLine("Ошибка: e должно быть 0 < e < 0.01");
+            return;
         }
 
-        Console.WriteLine($"arcsin({x}) ≈ {sum:F6}");
-        Console.WriteLine($"Проверка: {Math.Asin(x):F6}\n");
+        Console.WriteLine("Введите номер вычисляемого члена (n): ");
+        int number = int.Parse(Console.ReadLine()!);
 
-        Console.WriteLine("Введите n (номер члена, начиная с 0): ");
-        n = int.Parse(Console.ReadLine());
-
-        Console.WriteLine("Введите x: ");
-        x = double.Parse(Console.ReadLine());
-
-        if (n == 0)
-        {
-            term = x;
-        }
-        else
-        {
-            double numerator = 1.0;
-            for (int i = 1; i <= n; i++)
-            {
-                numerator *= (2 * i - 1);
-            }
-
-            double denominator = 1.0;
-            for (int i = 1; i <= n; i++)
-            {
-                denominator *= (2 * i);
-            }
-
-            term = (numerator / denominator) * Math.Pow(x, 2 * n + 1) / (2 * n + 1);
-        }
-
-        Console.WriteLine($"n-й член (n={n}): {term:F6}");
+        double result_func = calculation(x_func, epsilon);
+        
+        Console.Write("Введите x ряда: ");
+        double x_series = double.Parse(Console.ReadLine()!);
+        
+        int sign = (number % 2 == 0) ? 1 : -1;
+        double sum = sign * (Math.Pow(x_series, 2 * number) / (2 * number * (2 * number - 1)));
+        
+        Console.WriteLine($"Значение от {x_func}: {result_func:F4}\nЧлен ряда под номером {number}: {sum:F4}");
     }
 }
+
