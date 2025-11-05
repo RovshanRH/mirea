@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 public class Table
 {
+    static private Dictionary<string, Table> tables = new Dictionary<string, Table>();
     private string id;
     private string placement;
     private int seats_number;
@@ -34,7 +35,7 @@ public class Table
             Console.WriteLine(line);
         }
     }
-    private static string JoinWithFill(
+    public static string JoinWithFill(
         string left,
         string right,
         int totalWidth = 40,
@@ -64,21 +65,24 @@ public class Table
         this.schedule = schedule;
     }
     // создание стола
-    static public Table newTable(string id,
+    static public void newTable(string id,
                                  string placement,
                                  int seats_number,
                                  Dictionary<string, string> schedule)
     {
-        return new Table(id, placement, seats_number, schedule);
+        Table table = new Table(id, placement, seats_number, schedule);
+
+        tables[table.id] = table;
+        Console.WriteLine($"Стол создан по ID: {table.id}");
+
     }
     // изменение информации стола
-    static public void changeInfoTable(Table table,
-                                       string id = "01",
+    static public void changeInfoTable(string id,
                                        string placement = "у окна",
                                        int seats_number = 3,
                                        Dictionary<string, string> schedule = null)
     {
-        table.id = id;
+        Table table = tables[id];
         table.placement = placement;
         table.seats_number = seats_number;
         table.schedule = schedule;
