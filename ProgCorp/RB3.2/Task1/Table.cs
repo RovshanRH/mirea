@@ -1,103 +1,109 @@
 ﻿using System;
+
 using System.Collections.Generic;
-public class Table
+namespace BookingSystem.Table
 {
-    static private Dictionary<string, Table> tables = new Dictionary<string, Table>();
-    private string id;
-    private string placement;
-    private int seats_number;
-    private Dictionary<string, string> schedule = new Dictionary<string, string>();
-    public string ID
+    public class Table
     {
-        get { return id; }
-        set { id = value; }
-    }
-    public string Placement { get; set; }
-    public int Seats_number { get; set; }
-    public Dictionary<string, Table> Schedule { get; set; }
-
-    private static void PrintWithFill(Dictionary<string, string> data,
-                                      int labelWidth = 12,
-                                      char fill = '-')
-    {
-        int totalWidth = 40; // Общая ширина строки
-
-        foreach (var kvp in data)
+        static public Dictionary<string, Table> tables = new Dictionary<string, Table>();
+        public string id;
+        public string placement;
+        public int seats_number;
+        public Dictionary<string, string> schedule = new Dictionary<string, string>();
+        public string ID
         {
-            string label = kvp.Key.PadLeft(labelWidth);
-            string value = kvp.Value;
-            int fillCount = totalWidth - labelWidth - value.Length;
-
-            string line = fillCount > 0
-                ? label + new string(fill, fillCount) + value
-                : label + value;
-
-            Console.WriteLine(line);
+            get { return id; }
+            set { id = value; }
         }
-    }
-    public static string JoinWithFill(
-        string left,
-        string right,
-        int totalWidth = 40,
-        char fillChar = '-')
-    {
-        // Вычисляем, сколько места остаётся между left и right
-        int used = left.Length + right.Length;
-        int fillCount = totalWidth - used;
+        public string Placement { get; set; }
+        public int Seats_number { get; set; }
+        public Dictionary<string, Table> Schedule { get; set; }
 
-        if (fillCount <= 0)
+        private static void PrintWithFill(Dictionary<string, string> data,
+                                        int labelWidth = 12,
+                                        char fill = '-')
         {
-            return left + right; // Не хватает места — просто склеиваем
+            int totalWidth = 40; // Общая ширина строки
+
+            foreach (var kvp in data)
+            {
+                string label = kvp.Key.PadLeft(labelWidth);
+                string value = kvp.Value;
+                int fillCount = totalWidth - labelWidth - value.Length;
+
+                string line = fillCount > 0
+                    ? label + new string(fill, fillCount) + value
+                    : label + value;
+
+                Console.WriteLine(line);
+            }
+        }
+        public static string JoinWithFill(
+            string left,
+            string right,
+            int totalWidth = 40,
+            char fillChar = '-')
+        {
+            // Вычисляем, сколько места остаётся между left и right
+            int used = left.Length + right.Length;
+            int fillCount = totalWidth - used;
+
+            if (fillCount <= 0)
+            {
+                return left + right; // Не хватает места — просто склеиваем
+            }
+
+            string fill = new string(fillChar, fillCount);
+            return left + fill + right;
         }
 
-        string fill = new string(fillChar, fillCount);
-        return left + fill + right;
-    }
+        public Table(string id,
+                    string placement,
+                    int seats_number,
+                    Dictionary<string, string> schedule)
+        {
+            this.id = id;
+            this.placement = placement;
+            this.seats_number = seats_number;
+            this.schedule = schedule;
+        }
+        // создание стола
+        static public void newTable(string id,
+                                    string placement,
+                                    int seats_number,
+                                    Dictionary<string, string> schedule)
+        {
+            Table table = new Table(id, placement, seats_number, schedule);
 
-    public Table(string id,
-                 string placement,
-                 int seats_number,
-                 Dictionary<string, string> schedule)
-    {
-        this.id = id;
-        this.placement = placement;
-        this.seats_number = seats_number;
-        this.schedule = schedule;
-    }
-    // создание стола
-    static public void newTable(string id,
-                                 string placement,
-                                 int seats_number,
-                                 Dictionary<string, string> schedule)
-    {
-        Table table = new Table(id, placement, seats_number, schedule);
+            tables[table.id] = table;
+            Console.WriteLine($"Стол создан по ID: {table.id}");
 
-        tables[table.id] = table;
-        Console.WriteLine($"Стол создан по ID: {table.id}");
-
-    }
-    // изменение информации стола
-    static public void changeInfoTable(string id,
-                                       string placement = "у окна",
-                                       int seats_number = 3,
-                                       Dictionary<string, string> schedule = null)
-    {
-        Table table = tables[id];
-        table.placement = placement;
-        table.seats_number = seats_number;
-        table.schedule = schedule;
-    }
-    // вывод инфы про стол
-    static public void printTableInfo(Table table)
-    {
-        Console.WriteLine(JoinWithFill("ID: ", $"{table.id}"));
-        Console.WriteLine(JoinWithFill("Расположение: ", $"{table.placement}"));
-        Console.WriteLine(JoinWithFill("Количество мест: ", $"{table.seats_number}"));
-        Console.WriteLine("Расписание:\n");
-        PrintWithFill(table.schedule);
-    }
+        }
+        // изменение информации стола
+        static public void changeInfoTable(string id,
+                                        string placement = "у окна",
+                                        int seats_number = 3,
+                                        Dictionary<string, string> schedule = null)
+        {
+            Table table = tables[id];
+            table.placement = placement;
+            table.seats_number = seats_number;
+            table.schedule = schedule;
+            Console.WriteLine($"Информация о столе с ID: {id} изменена");
+        }
+        // вывод инфы про стол
+        static public void printTableInfo(string id)
+        {
+            Table table = tables[id];
+            Console.WriteLine(JoinWithFill("ID: ", $"{id}"));
+            Console.WriteLine(JoinWithFill("Расположение: ", $"{table.placement}"));
+            Console.WriteLine(JoinWithFill("Количество мест: ", $"{table.seats_number}"));
+            Console.WriteLine("Расписание:\n");
+            PrintWithFill(table.schedule);
+        }
 
 
-} 
+    } 
 
 
+}
