@@ -1,13 +1,15 @@
 ﻿using System;
-
 using System.Collections.Generic;
+
 namespace BookingSystem.Table
 {
+    using Booking;
     public class Table
     {
         static public Dictionary<string, Table> tables = new Dictionary<string, Table>();
         public string id;
         public string placement;
+        public string[] PlacementOptions = { "у окна", "у прохода", "у выхода", "в глубине" };
         public int seats_number;
         public Dictionary<string, string> schedule = new Dictionary<string, string>();
         public string ID
@@ -19,7 +21,7 @@ namespace BookingSystem.Table
         public int Seats_number { get; set; }
         public Dictionary<string, Table> Schedule { get; set; }
 
-        private static void PrintWithFill(Dictionary<string, string> data,
+        public static void PrintWithFill(Dictionary<string, string> data,
                                         int labelWidth = 12,
                                         char fill = '-')
         {
@@ -82,28 +84,49 @@ namespace BookingSystem.Table
         // изменение информации стола
         static public void changeInfoTable(string id,
                                         string placement = "у окна",
-                                        int seats_number = 3,
-                                        Dictionary<string, string> schedule = null)
+                                        int seats_number = 3)
         {
             Table table = tables[id];
-            table.placement = placement;
-            table.seats_number = seats_number;
-            table.schedule = schedule;
-            Console.WriteLine($"Информация о столе с ID: {id} изменена");
+            if (table.schedule == null)
+            {
+                if (Array.Exists(table.PlacementOptions, element => element == placement))
+                {
+                    Console.WriteLine($"Изменение расположения стола с ID: {id}");
+                    table.placement = placement;
+                }
+                else
+                {
+                    Console.WriteLine("Некорректное расположение стола. Допустимые варианты: у окна, у прохода, у выхода, в глубине.");
+                    return;
+                }
+                
+                table.seats_number = seats_number;
+                Console.WriteLine($"Информация о столе с ID: {id} изменена");
+            }
+            else
+            {
+                Console.WriteLine($"Невозможно изменить информацию о столе с ID: {id}, так как на него есть бронирования");
+            }
         }
         // вывод инфы про стол
-        static public void printTableInfo(string id)
+        public static void printTableInfo(string id)
         {
             Table table = tables[id];
             Console.WriteLine(JoinWithFill("ID: ", $"{id}"));
             Console.WriteLine(JoinWithFill("Расположение: ", $"{table.placement}"));
             Console.WriteLine(JoinWithFill("Количество мест: ", $"{table.seats_number}"));
             Console.WriteLine("Расписание:\n");
-            PrintWithFill(table.schedule);
+            
+            if (table.schedule.Count > 0)
+            {
+                PrintWithFill(table.schedule);
+            }
+            else
+            {
+                Console.WriteLine("Расписание пустое");
+            }
         }
 
 
     } 
-
-
-}
+    }    

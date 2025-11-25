@@ -1,9 +1,14 @@
 using System;
-using BookingSystem.Table;
-using BookingSystem.Booking;
 
-class main
+
+
+namespace MyProgram
 {
+    using Table;
+    using Booking;
+class MainProgram
+{
+    
     static private Dictionary<int, string> commandDesc = new Dictionary<int, string>
     {
         {1, "Создать стол"},
@@ -75,7 +80,27 @@ class main
                     Console.WriteLine("Изменение брони...");
                     Console.WriteLine("Введите ID брони для изменения:");
                     string bookingIdToChange = Console.ReadLine();
-                    Booking.changeInfoBooking(bookingIdToChange);
+                    Console.WriteLine("Хотите заполнить поля автоматически? [Y/N]");
+                    if (Console.ReadLine() == "Y") {
+                        Booking.changeInfoBooking(bookingIdToChange);
+                    }
+                    else if (Console.ReadLine() == "N")
+                    {
+                        Console.WriteLine("Введите имя клиента:");
+                        name = Console.ReadLine();
+                        Console.WriteLine("Введите номер телефона клиента:");
+                        phoneNumber = Console.ReadLine();
+                        Console.WriteLine("Введите дату и время начала бронирования (формат: ДД.ММ.ГГГГ ЧЧ:ММ):");
+                        dateStart = Console.ReadLine();
+                        Console.WriteLine("Введите дату и время окончания бронирования (формат: ДД.ММ.ГГГГ ЧЧ:ММ):");
+                        dateEnd = Console.ReadLine();
+                        Console.WriteLine("Введите комментарий к бронированию:");
+                        comment = Console.ReadLine();
+                        Console.WriteLine("Введите ID стола для бронирования:");
+                        bookedTableId = Console.ReadLine();
+                        Booking.changeInfoBooking(bookedTableId, name, phoneNumber, dateStart, dateEnd, comment);
+                    }
+
                     break;
                 case 4:
                     Console.WriteLine("Отмена брони...");
@@ -120,4 +145,5 @@ class main
             }
         }
     }
+}
 }

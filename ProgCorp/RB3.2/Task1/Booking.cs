@@ -1,20 +1,21 @@
 using System;
 using BookingSystem.Table;
-
+using System.Linq;
+using System.Collections.Generic;
 
 namespace BookingSystem.Booking
 {
-    using BookingSystem.Table;
+    using Table;
     class Booking
     {
-        static private Dictionary<string, Booking> bookings = new Dictionary<string, Booking>();
+        static public Dictionary<string, Booking> bookings = new Dictionary<string, Booking>();
         private string ID;
         private string NAME;
         private string PHONE_NUMBER;
         private string DATE_START;
         private string DATE_END;
         private string COMMENT;
-        private Table TABLE;
+        public Table TABLE;
 
         public Booking(string id, string name, string phoneNumber, string dateStart, string dateEnd, string comment, Table table)
         {
@@ -31,17 +32,20 @@ namespace BookingSystem.Booking
         {
             Booking booking = new Booking(id, name, phoneNumber, dateStart, dateEnd, comment, table);
             bookings[booking.ID] = booking;
+            table.schedule.Add(booking.DATE_START, booking.DATE_END);
             Console.WriteLine($"Бронирование создано по ID: {booking.ID}");
         }
-        static public void changeInfoBooking(string id, string name = "Имя Фамилия", string phoneNumber = "+7 (999) 999-99-99", string dateStart = "01.01.2024 19:00", string dateEnd = "01.01.2024 21:00", string comment = "Комментарий", Table table = null)
+        static public void changeInfoBooking(string id, string name = "Имя Фамилия", string phoneNumber = "+7 (999) 999-99-99", string dateStart = "01.01.2024 19:00", string dateEnd = "01.01.2024 21:00", string comment = "Комментарий")
         {
             Booking booking = bookings[id];
+            if (booking.TABLE.schedule.ContainsKey(booking.DATE_START))
+            {
+                booking.DATE_START = dateStart;
+                booking.DATE_END = dateEnd;
+            }
             booking.NAME = name;
             booking.PHONE_NUMBER = phoneNumber;
-            booking.DATE_START = dateStart;
-            booking.DATE_END = dateEnd;
             booking.COMMENT = comment;
-            booking.TABLE = table;
             Console.WriteLine($"Информация о бронировании с ID: {id} изменена");
         }
         static public void deleteBooking(string id)
@@ -63,6 +67,33 @@ namespace BookingSystem.Booking
                 Console.WriteLine();
             }
         }
+        static public void printSchedule(string TableId)
+            {
+                // Находим бронирования для данного стола
+                var tableBookings = bookings.Values
+                    .Where(booking => booking.TABLE.id == TableId)
+                    .ToList();
+
+                Console.WriteLine($"Расписание для стола ID: {TableId}:");
+
+                // Выводим временные интервалы
+                for (int hour = 9; hour < 18; hour++) // с 9:00 до 17:00
+                {
+                    string timeSlot = $"{hour}:00-{hour + 1}:00";
+                    string bookingInfo = "Свободно";
+
+                    // Проверяем, есть ли бронирование на этот временной интервал
+                    foreach (var booking in tableBookings)
+                    {
+                        // Здесь должна быть логика проверки пересечения временных интервалов
+                        // Это упрощенная версия - просто показываем первое найденное бронирование
+                        bookingInfo = $"ID: {TableId}, Имя: {booking.NAME}, Телефон: {booking.PHONE_NUMBER}";
+                        break;
+                    }
+
+                    Console.WriteLine(Table.JoinWithFill(timeSlot, bookingInfo));
+                }
+            }
         static public void printFreeBookingTables()
         {
             for (int i = 0; i < Table.tables.Count; i++)
